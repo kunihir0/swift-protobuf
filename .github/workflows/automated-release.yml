@@ -114,7 +114,7 @@ jobs:
 
           rm -rf packages
           make clean
-          make package DEBUG=1 THEOS_PACKAGE_SCHEME=${{ matrix.scheme }} ARCHS=arm64e
+          make package DEBUG=1 THEOS_PACKAGE_SCHEME=${{ matrix.scheme }} ARCHS="arm64 arm64e"
           if ls packages/*.deb 1> /dev/null 2>&1; then
             DEBUG_PKG=$(find packages -name "*.deb" -type f | head -1)
             cp "$DEBUG_PKG" "build-artifacts/debug-${{ matrix.scheme }}.deb"
