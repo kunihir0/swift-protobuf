@@ -1,8 +1,10 @@
-TARGET := iphone:clang:latest:14.0
+TARGET := iphone:clang:latest:15.4
 
 include $(THEOS)/makefiles/common.mk
 
 FRAMEWORK_NAME = SwiftProtobuf
+ARCHS=arm64 arm64e
+
 
 rwildcard = $(foreach d,$(wildcard $(1:=/*)),$(call rwildcard,$d,$2) $(filter $(subst *,%,$2),$d))
 
